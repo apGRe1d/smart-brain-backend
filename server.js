@@ -44,7 +44,7 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) })
 /*ENDPOINT FOR BACKEND CLARIFAI*/
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res, db) })
 
-app.listen(process.env.PORT ||3001, () => {
+app.listen(process.env.PORT || 3001, () => {
 	console.log(`app is running on port ${process.env.PORT} 3001`);
 })
 
