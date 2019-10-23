@@ -18,18 +18,9 @@ const db = knex({
 });
 
 const app = express();
-const url = require('url');
 
 app.use(bodyParser.json()); 
 app.use(cors());
-
-
-app.use(express.static(url.parse('https://github.com/apGRe1d/face-recognition-production/tree/master/build', true)));
-    
-app.get('*', function(req, res) {
-	res.sendFile(url.parse('https://github.com/apGRe1d/face-recognition-production/tree/master/build/index.html', true));
-});
-
 
 app.get('/', (req, res) => {
 	res.send('it is working!');
@@ -53,11 +44,3 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res, db) })
 app.listen(process.env.PORT || 3001, () => {
 	console.log(`app is running on port ${process.env.PORT} 3001`);
 })
-
-
-
-
-
-
-
-
